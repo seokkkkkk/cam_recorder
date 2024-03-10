@@ -32,6 +32,9 @@ Allows you to view the video captured by your laptop's camera directly on your s
 - A black box indicator will be displayed when this mode is active.
     - The application will switch to recording mode upon motion detection and revert to black box mode if no movement is detected for a specified period.
 
+https://github.com/seokkkkkk/cam_recorder/assets/66684504/7a2c7b67-01ad-432d-b402-deb47864a7ec
+
+
 ## Installation
 
 To run this application, ensure you have Python 3.9.6 and OpenCV 4.9.0 installed. Clone this repository, navigate to the project directory, and execute the main script. Please note that operation on versions other than Python 3.9.6 and OpenCV 4.9.0 is not guaranteed.
