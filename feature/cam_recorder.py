@@ -27,14 +27,13 @@ def main():
 
     not_detected = 0
     prev_frame = None
-    fixed_fps = 60
-    wait_msec = int(1 / fixed_fps * 1000)
+    fps = video.get(cv.CAP_PROP_FPS)
+    wait_msec = int(1 / fps * 1000)
     recording = False
     is_flip = False
     blackbox_mode = False
 
     while True:
-
         valid, frame = video.read()
 
         if not valid:
@@ -53,7 +52,7 @@ def main():
                 now = datetime.now()
                 filename = now.strftime('%Y-%m-%d_%H-%M-%S.avi')
                 h, w = frame.shape[:2]
-                out = cv.VideoWriter(filename, cv.VideoWriter_fourcc(*'XVID'), fixed_fps, (w, h), frame.ndim > 2)
+                out = cv.VideoWriter(filename, cv.VideoWriter_fourcc(*'XVID'), fps, (w, h), frame.ndim > 2)
         elif key == ord('f') or key == ord('F'):  # F로 좌우 반전
             is_flip = not is_flip
         elif key == ord('b') or key == ord('B'):  # B로 블랙 박스 모드 변경
@@ -67,7 +66,7 @@ def main():
                 now = datetime.now()
                 filename = now.strftime('%Y-%m-%d_%H-%M-%S.avi')
                 h, w = frame.shape[:2]
-                out = cv.VideoWriter(filename, cv.VideoWriter_fourcc(*'XVID'), fixed_fps, (w, h), frame.ndim > 2)
+                out = cv.VideoWriter(filename, cv.VideoWriter_fourcc(*'XVID'), fps, (w, h), frame.ndim > 2)
 
         if is_flip:
             frame = cv.flip(frame, 1)
