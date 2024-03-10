@@ -57,6 +57,8 @@ def main():
         elif key == ord('f') or key == ord('F'):  # F로 좌우 반전
             is_flip = not is_flip
         elif key == ord('b') or key == ord('B'):  # B로 블랙 박스 모드 변경
+            if recording:
+                recording = False
             blackbox_mode = not blackbox_mode
 
         if blackbox_mode and not recording:
@@ -81,7 +83,7 @@ def main():
                 if not_detected > 100:
                     recording = False
                     not_detected = 0
-                cv.putText(frame, f"Motion Not Detected: {not_detected}/300", (1420, 30), cv.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2)
+                cv.putText(frame, f"Motion Not Detected: {not_detected}/100", (1420, 30), cv.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2)
 
             elapsed_time = datetime.now() - now
             elapsed_seconds = int(elapsed_time.total_seconds())
