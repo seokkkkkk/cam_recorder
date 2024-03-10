@@ -24,6 +24,7 @@ Allows you to view the video captured by your laptop's camera directly on your s
 ### Recording Mode (Space)
 - Initiate recording of the video feed by pressing the `Space` key.
 - A recording indicator will be displayed when in recording mode.
+- video is saved to YYYY-MM-DD_HH-MM-SS.avi
 - <img width="978" alt="image" src="https://github.com/seokkkkkk/cam_recorder/assets/66684504/9683a6c9-07e9-47da-a02b-2bfbf675d6ca">
 
 
