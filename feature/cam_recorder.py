@@ -78,7 +78,7 @@ def main():
                     not_detected += 1
                 else:
                     not_detected = 0
-                if not_detected > 300:
+                if not_detected > 100:
                     recording = False
                     not_detected = 0
                 cv.putText(frame, f"Motion Not Detected: {not_detected}/300", (1420, 30), cv.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2)
